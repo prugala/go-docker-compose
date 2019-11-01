@@ -1,0 +1,8 @@
+version: "3.6"
+
+services:
+  app:
+    image: golang:${GO_VERSION}-alpine
+    volumes:
+      - ${PROJECT_DIR}:/go/src
+    working_dir: /go/src
