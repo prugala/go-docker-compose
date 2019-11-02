@@ -2,7 +2,9 @@ version: "3.6"
 
 services:
   app:
-    image: golang:${GO_VERSION}-alpine
+    build: 
+      context: "./docker/golang"
+      args:
+        GO_VERSION: ${GO_VERSION}
     volumes:
-      - ${PROJECT_DIR}:/go/src
-    working_dir: /go/src
+      - ${PROJECT_DIR}:/app
